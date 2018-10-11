@@ -30,7 +30,7 @@ before_script:
   - opam init --auto-setup
   - eval $(opam config env)
   - opam --version
-  - ocamlc --version
+  - ocamlc -version
   - opam install ocp-indent
   - which ocp-indent
   - OS_NAME=$(uname | tr A-Z a-z)
