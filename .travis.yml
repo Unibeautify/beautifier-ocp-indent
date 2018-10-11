@@ -17,6 +17,7 @@ addons:
       - opam
 before_script:
   - opam init --auto-setup
+  - eval $(opam env)
   - opam version
   - ocamlc --version
   - OS_NAME=$(uname | tr A-Z a-z)
