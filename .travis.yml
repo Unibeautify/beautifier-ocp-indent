@@ -14,7 +14,14 @@ cache:
 addons:
   apt:
     packages:
+      - build-essential
+      - curl
+      - libssl-dev
+      - m4
+      - ocaml
+      - ocaml-native-compilers
       - opam
+      - zlib1g-dev
 before_script:
   - opam init --auto-setup
   - eval $(opam env)
