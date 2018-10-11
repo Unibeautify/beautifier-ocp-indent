@@ -22,6 +22,10 @@ addons:
       - ocaml-native-compilers
       - opam
       - zlib1g-dev
+  homebrew:
+    packages:
+      - ocaml
+      - opam
 before_script:
   - opam init --auto-setup
   - eval $(opam config env)
