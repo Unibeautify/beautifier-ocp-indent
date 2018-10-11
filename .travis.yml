@@ -11,7 +11,13 @@ os:
 cache:
   directories:
   - node_modules
+addons:
+  apt:
+    packages:
+      - opam
 before_script:
+  - opam init --auto-setup
+  - opam version
   - OS_NAME=$(uname | tr A-Z a-z)
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-${OS_NAME}-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
