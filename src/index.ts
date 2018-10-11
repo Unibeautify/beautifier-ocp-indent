@@ -19,7 +19,7 @@ export const beautifier: Beautifier = {
       homepageUrl: "https://github.com/OCamlPro/ocp-indent",
       installationUrl: "https://www.typerex.org/ocp-indent.html",
       bugsUrl: "https://github.com/OCamlPro/ocp-indent/issues",
-      badges: []
+      badges: [],
     },
   ],
   options: {
