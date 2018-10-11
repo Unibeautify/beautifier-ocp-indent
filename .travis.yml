@@ -20,6 +20,8 @@ before_script:
   - eval $(opam env)
   - opam version
   - ocamlc --version
+  - opam install ocp-indent
+  - which ocp-indent
   - OS_NAME=$(uname | tr A-Z a-z)
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-${OS_NAME}-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
