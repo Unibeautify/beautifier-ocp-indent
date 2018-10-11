@@ -24,7 +24,7 @@ addons:
       - zlib1g-dev
 before_script:
   - opam init --auto-setup
-  - eval $(opam env)
+  - eval $(opam config env)
   - opam version
   - ocamlc --version
   - opam install ocp-indent
