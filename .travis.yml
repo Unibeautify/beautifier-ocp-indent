@@ -29,7 +29,7 @@ addons:
 before_script:
   - opam init --auto-setup
   - eval $(opam config env)
-  - opam version
+  - opam --version
   - ocamlc --version
   - opam install ocp-indent
   - which ocp-indent
