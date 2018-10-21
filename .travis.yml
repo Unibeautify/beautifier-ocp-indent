@@ -1,0 +1,47 @@
+env:
+  global:
+    - OCAML_VERSION=4.07
+    - CC_TEST_REPORTER_ID=902ee44ea46723e040ad2bc834cf3d1727194bfcb23b5fa8b592a24b956313fd
+language: node_js
+node_js:
+  - "8"
+  - "10"
+os:
+  - linux
+  - osx
+cache:
+  directories:
+  - node_modules
+addons:
+  apt:
+    packages:
+      - build-essential
+      - curl
+      - libssl-dev
+      - m4
+      - ocaml
+      - ocaml-native-compilers
+      - zlib1g-dev
+  homebrew:
+    packages:
+      - ocaml
+before_script:
+  - curl -sSL https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh | sh
+  - opam --version
+  - ocamlc -version
+  - opam update
+  - opam install ocp-indent
+  - which ocp-indent
+  - ocp-indent --version
+  - OS_NAME=$(uname | tr A-Z a-z)
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-${OS_NAME}-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - npm test
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+notifications:
+  email:
+    on_success: never
+    on_failure: change
