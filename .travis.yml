@@ -25,10 +25,7 @@ addons:
     packages:
       - ocaml
 before_script:
-  - wget https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh
-  - sh install.sh
-  - opam init --auto-setup
-  - eval $(opam config env)
+  - https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh
   - opam --version
   - ocamlc -version
   - opam update
