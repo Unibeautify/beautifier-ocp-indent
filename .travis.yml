@@ -1,5 +1,6 @@
 env:
   global:
+    - OCAML_VERSION=4.07
     - CC_TEST_REPORTER_ID=902ee44ea46723e040ad2bc834cf3d1727194bfcb23b5fa8b592a24b956313fd
 language: node_js
 node_js:
